@@ -10,15 +10,14 @@ class CreateAngkatanTable extends Migration
     {
         Schema::create('angkatan', function (Blueprint $table) {
             $table->id();
+            $table->integer('tahun');
             $table->string('nama_angkatan');
-            $table->year('tahun_mulai');
-            $table->year('tahun_selesai')->nullable();
             $table->timestamps();
         });
     }
 
     public function down()
     {
-        Schema::dropIfExists('angkatan');
+        Schema::dropIfExists('angkatan');  
     }
 }
