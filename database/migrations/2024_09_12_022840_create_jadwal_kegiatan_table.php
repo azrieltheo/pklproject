@@ -10,7 +10,8 @@ class CreateJadwalKegiatanTable extends Migration
     {
         Schema::create('jadwal_kegiatan', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('kegiatan_id')->constrained('kegiatan'); // Merujuk ke tabel 'kegiatan'
+            $table->foreignId('kegiatan_id')->constrained('kegiatan'); 
+            $table->date('tanggal'); 
             $table->dateTime('waktu_mulai');
             $table->dateTime('waktu_selesai')->nullable();
             $table->timestamps();

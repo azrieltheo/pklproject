@@ -12,11 +12,13 @@ class PembimbingSekolah extends Model
     protected $table = 'pembimbing_sekolah';
 
     protected $fillable = [
-        'ID_User',
+        'id_user', // Perbaiki menjadi huruf kecil
+        'nama',
+        'instansi'
     ];
 
     public function user()
     {
-        return $this->belongsTo(User::class, 'ID_User');
+        return $this->belongsTo(User::class, 'id_user'); // Pastikan relasi benar
     }
 }

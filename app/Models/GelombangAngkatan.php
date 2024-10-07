@@ -9,15 +9,13 @@ class GelombangAngkatan extends Model
 {
     use HasFactory;
 
-    protected $table = 'gelombang_angkatans';
+    
+    protected $table = 'gelombang_angkatan';
 
     protected $fillable = [
-        'ID_GelombangAngkatan',
-        'ID_Angkatan',
+        'angkatan_id',
+        'nama_gelombang',
+        'waktu_mulai',
+        'waktu_selesai',
     ];
-
-    public function jadwalKegiatan()
-    {
-        return $this->hasMany(JadwalKegiatan::class, 'ID_GelombangAngkatan');
-    }
 }

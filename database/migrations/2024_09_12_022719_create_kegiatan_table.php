@@ -6,17 +6,23 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateKegiatanTable extends Migration
 {
-    public function up()
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
     {
         Schema::create('kegiatan', function (Blueprint $table) {
             $table->id();
             $table->string('nama_kegiatan');
-            $table->date('tanggal_kegiatan');
+            $table->text('deskripsi');
             $table->timestamps();
         });
     }
 
-    public function down()
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
     {
         Schema::dropIfExists('kegiatan');
     }

@@ -12,11 +12,10 @@ class JadwalKegiatanFactory extends Factory
     public function definition()
     {
         return [
-            'kegiatan_id' => function() {
-                return \App\Models\Kegiatan::factory()->create()->id;
-            },
-            'waktu_mulai' => $this->faker->dateTimeBetween('-1 week', '+1 week'),
-            'waktu_selesai' => $this->faker->dateTimeBetween('+1 week', '+2 weeks'),
-        ];
+            'kegiatan_id' => \App\Models\Kegiatan::inRandomOrder()->first()->id,
+            'tanggal' => $this->faker->date(), // Pastikan ini ada
+            'waktu_mulai' => $this->faker->dateTime(),
+            'waktu_selesai' => $this->faker->dateTime(),
+        ];        
     }
 }

@@ -14,6 +14,7 @@ class SiswaPkl extends Model
     protected $fillable = [
         'ID_User',
         'DataDiri',
+        'angkatan_id',
     ];
 
     public function user()

@@ -9,16 +9,17 @@ class JadwalKegiatan extends Model
 {
     use HasFactory;
 
-    protected $table = 'jadwal_kegiatans';
+    protected $table = 'jadwal_kegiatan';
 
     protected $fillable = [
-        'Tanggal',
-        'Deskripsi',
-        'ID_GelombangAngkatan',
+        'kegiatan_id',
+        'tanggal',
+        'waktu_mulai',
+        'waktu_selesai',
     ];
 
-    public function gelombangAngkatan()
+    public function kegiatan()
     {
-        return $this->belongsTo(GelombangAngkatan::class, 'ID_GelombangAngkatan');
+        return $this->belongsTo(Kegiatan::class, 'kegiatan_id');
     }
 }

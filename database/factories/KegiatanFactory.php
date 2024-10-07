@@ -12,8 +12,8 @@ class KegiatanFactory extends Factory
     public function definition()
     {
         return [
-            'nama_kegiatan' => 'Kegiatan ' . $this->faker->word(),
-            'deskripsi' => $this->faker->paragraph(),
+            'nama_kegiatan' => $this->faker->word(),
+            'deskripsi' => $this->faker->sentence(),
         ];
     }
 }

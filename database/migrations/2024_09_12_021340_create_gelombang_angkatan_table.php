@@ -10,8 +10,10 @@ class CreateGelombangAngkatanTable extends Migration
     {
         Schema::create('gelombang_angkatan', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('angkatan_id')->constrained('angkatan');
+            $table->foreignId('angkatan_id')->constrained('angkatans'); // Menghubungkan ke tabel angkatans
             $table->string('nama_gelombang');
+            $table->date('waktu_mulai');
+            $table->date('waktu_selesai');
             $table->timestamps();
         });
     }
