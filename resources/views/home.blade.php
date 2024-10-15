@@ -3,16 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <a href="/">home</a>
-    <a href="/about">about</a>
-    <a href="blog">blog</a>
-    <a href="/kontak">Contact</a>
-    <h1>Halaman Home</h1>
-    <script src="js/script.js"></script>
-    <img src="img/smk2.jpg" alt="smkn2">
+<body class="bg-gray-200 flex justify-center items-center h-screen">
+    <div class="bg-blue-500 w-96 p-8 rounded-xl shadow-lg">
+        <h1 class="text-white text-3xl font-bold text-center mb-6">SILAHKAN LOGIN</h1>
+        <form action="#" method="POST">
+            <!-- Input Email -->
+            <div class="mb-4">
+                <input type="email" placeholder="Masukan Email Anda" class="w-full p-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400">
+            </div>
+
+            <!-- Input Password -->
+            <div class="mb-6">
+                <input type="password" placeholder="Password" class="w-full p-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400">
+            </div>
+
+            <!-- Tombol Login -->
+            <div class="mb-4">
+                <button class="w-full bg-teal-400 text-white py-3 rounded-md font-semibold hover:bg-teal-500 transition-all duration-300">LOGIN</button>
+            </div>
+
+            <!-- Register Link -->
+            <div class="text-center">
+                <p class="text-white">Belum punya akun? <a href="#" class="text-teal-300 underline">Register</a></p>
+            </div>
+        </form>
+    </div>
 </body>
 </html>
