@@ -17,13 +17,13 @@
       <nav>
         <ul>
           <li class="px-4 py-2 hover:bg-blue-600">
-            <a href="#" class="block">Home</a>
+            <a href="/about" class="block">About</a> 
           </li>
           <li class="px-4 py-2 hover:bg-blue-600">
-            <a href="#" class="block">About</a>
+            <a href="/settings" class="block">Settings</a>
           </li>
           <li class="px-4 py-2 hover:bg-blue-600">
-            <a href="#" class="block">Settings</a>
+            <a href="/login" class="block">Logout</a>     
           </li>
         </ul>
       </nav>
@@ -34,7 +34,7 @@
       <!-- Top Bar -->
       <header class="bg-blue-800 text-white p-4">
         <div class="flex justify-between">
-          <div class="text-xl">Home</div>
+          <div class="text-xl">Dashboard</div>
           <div class="text-sm">Welcome, User</div>
         </div>
       </header>

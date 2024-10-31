@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About</title>
+    <title>Settings</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-100 text-gray-800">
@@ -12,20 +12,17 @@
     <nav class="bg-blue-600 p-4 shadow-md">
         <div class="container mx-auto flex space-x-4">
             <a href="/dashboard" class="text-white hover:underline">Dashboard</a> <!-- Link ke Dashboard -->
-            <a href="/settings" class="text-white hover:underline">Settings</a> <!-- Link ke Settings -->
+            <a href="/about" class="text-white hover:underline">About</a> <!-- Link ke About -->
             <a href="/login" class="text-white hover:underline">Logout</a> <!-- Link kembali ke Login -->
         </div>
     </nav>
 
     <!-- Content -->
     <div class="container mx-auto mt-10 p-6 bg-white rounded-lg shadow-lg">
-        <h1 class="text-3xl font-bold mb-4">Halaman About</h1>
-        <h3 class="text-xl font-semibold mb-4">Owner: {{ $nama }}</h3>
+        <h1 class="text-3xl font-bold mb-4">Halaman Settings</h1>
 
-        <!-- Lorem Ipsum Text -->
         <p class="text-gray-700 leading-relaxed">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            Ini adalah halaman pengaturan. Anda dapat mengubah preferensi Anda di sini.
         </p>
     </div>
 

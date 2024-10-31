@@ -2,30 +2,41 @@
 
 use Illuminate\Support\Facades\Route;
 
-// Route GET untuk menampilkan halaman Home (Login Form)
+use Illuminate\Support\Facades\Auth;
+
+// Route untuk halaman login
 Route::get('/', function () {
-    return view('home'); // Halaman login
+    return view('login');
+})->name('login');
+
+// Route untuk proses login
+Route::post('/login', function () {
+    // Logika autentikasi (misal menggunakan Auth::attempt)
+    // jika berhasil, redirect ke dashboard
+    if (Auth::attempt(['email' => request('email'), 'password' => request('password')])) {
+        return redirect()->intended('dashboard');
+    }
+    // jika gagal, kembali ke halaman login dengan pesan error
+    return back()->withErrors(['loginError' => 'Login gagal, periksa kembali kredensial Anda.']);
 });
 
-// Route POST untuk menangani login dan redirect ke blog
-Route::post('/', function () {
-    // Logic untuk login (bisa tambahkan validasi atau autentikasi di sini)
-    return redirect('/blog'); // Setelah login redirect ke blog
-});
+// Route untuk halaman dashboard yang dilindungi oleh middleware 'auth'
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware('auth');
 
+// Route untuk halaman about
 Route::get('/about', function () {
-    return view('about');
-});
+    return view('about', ['nama' => 'Azriel Theo']);
+})->middleware('auth');
 
+// Route untuk halaman settings yang dilindungi oleh middleware 'auth'
 Route::get('/settings', function () {
     return view('settings');
-});
+})->middleware('auth');
 
-Route::get('/blog', function () {
-    return view('blog');
-});
-
-Route::get('/kontak', function () {
-    return view('kontak');
-});
-
+// Route untuk logout
+Route::post('/logout', function () {
+    Auth::logout();
+    return redirect('/');
+})->name('logout');
